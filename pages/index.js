@@ -1,11 +1,29 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
-export default function Home() {
+function HomePage() {
   return (
-    <div className={styles.container}>
-      <h1>Hello Next World!</h1>
+    <div>
+      <h1>HomePage</h1>
+      <ul>
+        <li>
+          <Link
+            href={{
+              pathname: "/clients/[id]",
+              query: { id: 5 },
+            }}
+          >
+            Portfoilio
+          </Link>
+        </li>
+        <li>
+          <Link href="/clients">Clients</Link>
+        </li>
+        <li>
+          <Link href="/about">About</Link>
+        </li>
+      </ul>
     </div>
   );
 }
+
+export default HomePage;
